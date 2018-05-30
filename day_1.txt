@@ -106,3 +106,57 @@ Font简写 {
         font-style, font-variant, font-weight, font-stretch, font-size, line-height, font-family
     eg: p {font: italic normal bold normal 3em/1.5 Arial, sans-serif;}
 }
+**2018.5.30**
+
+第四天：从背景开始
+元素的背景是指，在元素内容、内边距和边界下层的区域。 { 
+    背景颜色： background-color {
+        为背景设置一个纯色
+        大多数元素的默认颜色是：transparent    透明
+        eg: p {background-color: green;}
+    }
+    背景图像： background-image {
+        指定在元素背景中显示的图像
+        路径 {
+            url()函数    以一个路径为参数获取一个静态文件的插入
+            eg: p {background-image: url(img/chen.jpg);}
+        }
+        默认情况下，图像在水平和垂直方向都是重复的
+        颜色渐变 {
+            线性渐变    linear-gradient()函数
+            eg: div {background-img: linear-gradient(to bottom, orange, yellow);}    
+                从上到下，从顶部橙色平稳过度到底部的黄色
+                关键字： to bottom, to right, to bottom right, to top...
+                角度值： 0deg相当于to top, 90deg相当于to right, 360deg相当于 to top...
+            颜色站点    color stops
+            eg: div {background-img: linear-gradient(to bottom, yellow, orange 40%, yellow);}
+            重复的线性渐变  repeating-linear-gradient()函数
+        }
+    } 
+    背景重复： background-repeat {
+        指定背景图像如何重复
+        默认值为：repeat
+            no-repeat    图像将不会重复，只会显示一次
+            repeat-x     图像将在整个背景中水平地重复
+            repeat-y     图像将在整个背景下垂直地重复
+        eg: p {background-repeat: no-repeat;}
+    }
+    背景位置： background-position {
+        指定图像在元素背景中出现的位置
+        通常使用两个通过空格分隔的值，指定了图像的水平x和垂直y坐标
+        eg: p {background-position: 99% center;}
+    }
+    背景附着： background-attachment {
+        当内容滚动时，指定背景的行为
+            scroll    把背景修改为页面视图，在页面滚动时滚动
+            fixed     固定背景，不滚动
+            local     将背景设置为它所设置的元素的背景，元素滚动时滚动
+    }
+    背景简写： background {
+        在一行中指定以上5个属性的缩写
+    }
+    背景尺寸： background-size{
+        允许动态调整背景图像的大小
+    }
+    background-clip          改变背景所占用的区域
+}

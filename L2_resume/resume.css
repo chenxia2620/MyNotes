@@ -28,7 +28,19 @@ b {
 div#content {
     width: 100%;
     text-align: center;
+    background-image: url(img/bg.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+ul {
+    list-style: none;
 }
 li {
     text-indent: 2em;
+}
+a {
+    list-style: none;
+}
+a:link {
+    
 }
