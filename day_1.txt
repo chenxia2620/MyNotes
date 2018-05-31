@@ -160,3 +160,37 @@ Font简写 {
     }
     background-clip          改变背景所占用的区域
 }
+**2018.5.30**
+
+NO.5 从边框记起
+border {
+    边框默认使用文本颜色，宽度为3px。
+    简写: eg: p {border: 2px solid red;}
+    普通写法 {
+        设置边框一侧的宽度、样式、颜色： border-top, border-right, border-bottom, border-left
+        设置边框宽度、样式、颜色，但会应用到四个边： border-width, border-style, border-color
+        设置边框一侧的单独属性： border-top-width, border-right-style, border-bottom-color
+    }
+    边框半径： border-radius {
+        圆角属性： 圆角、椭圆角
+        eg: div1 {border-radius: 5px 10px 15px 20px;}    //4个边都是圆角
+            div2 {border-radius: 20px / 30px;}     //椭圆角
+            div3 {border-top-left-radius: 20px; border-bottom-right-radius: 30px;}
+    }
+    边框图像： border-image {
+        指定源图像： border-image-source: url()
+        设置所需切边大小： border-image-slice: number
+        指定图像如何填充边框： border-image-repeat {
+            stretch    默认，拉伸填满，不推荐
+            repeat     重复填满
+            round      重复，稍微拉伸填满，推荐
+            space      重复，间隔填满
+        }
+        只调整边框图像： border-image-width {
+            若设置小于border-width，它会在边框外，而不是填满它
+        }
+        定义边框内部和内边距之间额外空间的大小： border-image-ouset
+        简写： eg: div {border-image: url(chen.png) 40 round;}
+    }
+}
+**2018.5.31**
