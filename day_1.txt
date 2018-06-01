@@ -194,3 +194,76 @@ border {
     }
 }
 **2018.5.31**
+
+NO.6 关于列表的笔记
+<ul>和<ol> {
+    默认的样式预设值： {
+        <ul>和<ol>元素设置margin的顶部和底部：1em 0;和padding-left: 2.5em;(浏览器默认字体大小16px)
+        <li>默认是没有间距的
+        <dl>元素设置margin顶部和底部: 1em，无内边距设定
+        <dd>元素设置为margin-left: 2.5em
+        参考： <p>元素margin-top和margin-bottom都为1em
+    }
+    列表特定样式： {
+        符号样式： list-style-type {
+            允许设置项目符号点的类型
+            值： {
+                none           不显示列表项的标记
+                disc           实心圆点，默认
+                circle         空心圆点
+                square         实心方块
+                decimal        十进制阿拉伯数字，从1开始
+                cjk-decimal    中日韩十进制数
+            }
+        }
+        项目符号位置： list-style-position {
+            设置在每个项目开始之前，项目符号是出现在列表项内，还是出现在其外
+            值： {
+                outside    项目符号位于列表项外，默认
+                inside     项目符号位于行内
+            }
+        }
+        自定义项目符号图片： list-style-image {
+            允许对于项目符号使用自定义图片
+            eg: ul {list-style-image: url(star.svg);}
+            建议： 将list-style-type: none，使用background属性代替
+        }
+        速记： list-style {
+            eg: ul {list-style: square url(example.png) inside;}
+        }
+    }
+    管理列表计数： {
+        在有序列表上进行不同的计数方式
+        start {
+            允许从1以外的数字开始计数
+            eg: <ol start="4">...</ol>
+        }
+        reversed {
+            将启动列表倒计数
+            eg: <ol start="5" reversed>...</ol>
+        }
+        value {
+            允许设置列表项指定数值
+            eg: <ol><li value="13"></li></ol>
+        }
+    }
+}
+**2018.6.1**
+
+NO.7 关于超链接
+链接状态 {
+    Link(没有访问过的)    默认状态，当它没有处在其他状态时，可使用伪类:link
+    Visited              已经被访问过，存在于浏览器的历史记录，可使用伪类:visited
+    Focus                被选中时，通过键盘Tab移动或编程HTMLElement.focus()选中，可使用伪类:focus
+    Hover                用户鼠标停留在链接上时，可使用伪类:hover
+    Active               当它被激活时，如被点击时，可使用伪类:active
+}
+链接样式顺序 {
+    a {}
+    a:link {}
+    a:visited {}
+    a:focus {}
+    a:hover {}
+    a:active {}
+}
+**2018.6.1**
